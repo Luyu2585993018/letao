@@ -8,7 +8,7 @@ $(document).ajaxStop(function() {
 	NProgress.done();
 });
 $(".child").prev().on("click", function () {
-  $(this).next().slideToggle();
+  $(this).next().stop().slideToggle();
 });
 
 
@@ -16,6 +16,7 @@ $(".child").prev().on("click", function () {
 $(".icon_menu").on("click", function () {
   $(".lt_aside").toggleClass("now");
   $(".lt_main").toggleClass("now");
+  $(".p_right").toggleClass("now");
 });
 
 
