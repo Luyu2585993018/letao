@@ -28,9 +28,9 @@
 					</li>
 					<li>
 						<a href="javascript:;"><span class="glyphicon glyphicon-list"></span>分类管理</a>
-						<div class="child" style="display: none" ;>
+						<div class="child" style="display: block" ;>
 							<a href="first.html">一级分类</a>
-							<a href="second.html">二级分类</a>
+							<a href="second.html" class="now">二级分类</a>
 						</div>
 					</li>
 					<li>
@@ -45,18 +45,36 @@
 				<a href="javascript:;" class="pull-right icon_logout"><span class="glyphicon glyphicon-log-out"></span></a>
 			</div>
 
-			<div class="container-fluid">
+			<div class="container-fluid sort">
 				<ol class="breadcrumb">
 					<li>
 						<a href="#">管理系统</a>
 					</li>
-					<li class="active">首页</li>
+					<li>
+						<a href="#">分类管理 </a>
+					</li>
+					<li class="active">二级分类</li>
 				</ol>
-				<div class="lt_content">
+				<button class="btn btn-default mb_20 btn_add">添加分类</button>
 
-					<div class="chart_left pull-left"></div>
-					<div class="chart_right pull-right"></div>
+				<!--分类表格-->
+				<table class="table table-bordered table-hover">
+					<thead>
+						<tr>
+							<td width="10%">序号</td>
+							<td width="30%">一级分类名称</td>
+							<td width="30%">二级分类名称</td>
+							<td width="30%">二级分类LOGO</td>
+						</tr>
+					</thead>
+					<tbody>
+						<!--挖个坑-->
+					</tbody>
+				</table>
 
+				<!--分页盒子-->
+				<div class="text-right">
+					<ul id="paginator"></ul>
 				</div>
 			</div>
 
@@ -71,21 +89,80 @@
 					<div class="modal-body">
 						<p class="text-danger">
 							<span class="glyphicon glyphicon-info-sign"></span>您确定要退出后台管理系统吗？</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-        <button type="button" class="btn btn-primary btn_logout">退出</button>
-      </div>
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
-	
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+						<button type="button" class="btn btn-primary btn_logout">退出</button>
+					</div>
+				</div>
+				<!-- /.modal-content -->
+			</div>
+			<!-- /.modal-dialog -->
+		</div>
+		<!-- /.modal -->
+		<div class="modal fade" tabindex="-1" id="addModal">
+			<div class="modal-dialog modal-sm">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+						<h4 class="modal-title">添加分类</h4>
+					</div>
+					<form id="form">
+						<div class="modal-body">
+
+							<div class="form-group">
+								<div class="dropdown">
+									<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+                <span class="dropdown-text">请选择一级分类</span>
+                <span class="caret"></span>
+              </button>
+									<input type="hidden" name="categoryId">
+									<ul class="dropdown-menu">
+										<!---->
+									</ul>
+								</div>
+							</div>
+							<div class="form-group">
+								<input type="text" class="form-control" name="brandName" placeholder="请输入二级分类的名称">
+							</div>
+							<div class="form-group">
+								<div class="fileupload_box">
+									<button class="btn btn-default">上传图片</button>
+									<input type="file" class="btn btn-default" id="fileupload" name="pic1" data-url="/category/addSecondCategoryPic">
+								</div>
+							</div>
+							<div class="form-group img_box">
+								<img src="images/none.png" width="100" height="100" alt="">
+								<input type="hidden" name="brandLogo">
+							</div>
+
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+					
+							<button type="submit" form="form" class="btn btn-primary">添加</button></div>
+					</form>
+					</div>
+				</div>
+			</div>
+		<script type="text/html" id='tpl1'>
+			{{each rows v i}}
+			<tr>
+				<td>{{i+1+(page-1)*size}}</td>
+				<td>{{v.categoryName}}</td>
+				<td>{{}}</td>
+				<td>{{}}</td>
+			</tr>
+
+			{{/each}}
+		</script>
 	</body>
 
 </html>
 <script type="text/javascript" src="lib/jquery/jquery.js"></script>
 <script type="text/javascript" src="lib/bootstrap/js/bootstrap.js"></script>
 <script type="text/javascript" src="lib/bootstrap-validator/js/bootstrapValidator.js"></script>
-<script type="text/javascript" src="../manage/lib/nprogress/nprogress.js"></script>
-<script type="text/javascript" src="lib/echarts/echarts.min.js"></script>
+<script type="text/javascript" src="lib/bootstrap-paginator/bootstrap-paginator.js" ></script>
+<script type="text/javascript" src="lib/nprogress/nprogress.js"></script>
 <script type="text/javascript" src="js/common.js"></script>
+<script type="text/javascript" src="js/second.js"></script>

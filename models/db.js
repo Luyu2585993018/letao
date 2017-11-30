@@ -44,5 +44,3 @@ exports.query = function() {
         });
     });
 };
-
-

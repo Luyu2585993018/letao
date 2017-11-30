@@ -1,12 +1,38 @@
+/**
+ * Created by HUCC on 2017/11/21.
+ */
+//进度条功能
+
 NProgress.configure({
 	showSpinner: false
 });
+
 $(document).ajaxStart(function() {
-	NProgress.start()
+	NProgress.start();
 });
+
 $(document).ajaxStop(function() {
-	NProgress.done();
+	//完成进度条
+	setTimeout(function() {
+		NProgress.done();
+	}, 1500);
 });
+
+
+if(location.href.indexOf('login.html')==-1){
+	$.ajax({
+		type:"get",
+		url:"/employee/checkRootLogin",
+		async:true,
+		success:function(data){
+			if(data.error==400){
+				location.href='login.html';
+			}
+		}
+	});
+}
+
+
 $(".child").prev().on("click", function () {
   $(this).next().stop().slideToggle();
 });
@@ -23,24 +49,15 @@ $(".icon_menu").on("click", function () {
 //退出功能
 $(".icon_logout").on("click", function () {
   $("#logoutModal").modal("show");
-
-  //因为jquery注册事件不会覆盖。
-  //off()解绑所有的事件
-  //off("click")
   $(".btn_logout").off().on("click", function () {
-    
-    //发送ajax请求，告诉服务器，需要退出
     $.ajax({
       type:"get",
       url:"/employee/employeeLogout",
       success:function(data) {
         if(data.success){
-          //退出成功，才跳转到登录页面
           location.href = "login.html";
         }
       }
     });
-
-
   });
 });

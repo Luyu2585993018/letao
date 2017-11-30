@@ -45,6 +45,11 @@ a:active {
 .panel h4 {
   text-align: center;
 }
+.lt_aside .nav a.now {
+  background-color: #1d1f21;
+  color: #fff;
+  border-left-color: #069;
+}
 .lt_aside {
   height: 100%;
   width: 180px;
@@ -112,6 +117,11 @@ a:active {
   padding-left: 180px;
   transition: all 1s;
   position: relative;
+  overflow: hidden;
+}
+.lt_main .sort {
+  margin-top: 70px;
+  margin-bottom: 20px;
 }
 .lt_main .lt_topbar {
   position: fixed;
@@ -141,4 +151,7 @@ a:active {
 }
 .lt_main.now {
   padding-left: 0;
+}
+.mb_20 {
+  margin-bottom: 20px;
 }

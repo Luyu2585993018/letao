@@ -5,17 +5,17 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
-		<link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap.css" />
-		<link rel="stylesheet" type="text/css" href="lib/bootstrap-validator/css/bootstrapValidator.css" />
-		<link rel="stylesheet" type="text/css" href="lib/nprogress/nprogress.css" />
-		<link rel="stylesheet" type="text/css" href="css/common.css" />
-		<title>Document</title>
+		<link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
+		<link rel="stylesheet" href="lib/bootstrap-validator/css/bootstrapValidator.css">
+		<link rel="stylesheet" href="lib/nprogress/nprogress.css">
+		<link rel="stylesheet" href="css/common.css">
+		<title>系统管理-首页</title>
 	</head>
 
 	<body class="">
 		<div class="lt_aside">
 			<div class="brand">
-				<a href="index.html">黑马16期</a>
+				<a href="index.html" class="now">黑马16期</a>
 			</div>
 			<div class="user">
 				<img src="images/default.png" />
@@ -45,7 +45,7 @@
 				<a href="javascript:;" class="pull-right icon_logout"><span class="glyphicon glyphicon-log-out"></span></a>
 			</div>
 
-			<div class="container-fluid">
+			<div class="container-fluid sort">
 				<ol class="breadcrumb">
 					<li>
 						<a href="#">管理系统</a>
@@ -70,23 +70,27 @@
 					</div>
 					<div class="modal-body">
 						<p class="text-danger">
-							<span class="glyphicon glyphicon-info-sign"></span>您确定要退出后台管理系统吗？</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-        <button type="button" class="btn btn-primary btn_logout">退出</button>
-      </div>
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
-	
+							<span class="glyphicon glyphicon-info-sign"></span>
+							您确定要退出后台管理系统吗？
+						</p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+						<button type="button" class="btn btn-primary btn_logout">退出</button>
+					</div>
+				</div>
+				<!-- /.modal-content -->
+			</div>
+			<!-- /.modal-dialog -->
+		</div>
+		<!-- /.modal -->
+		<script src="lib/jquery/jquery.js"></script>
+		<script src="lib/bootstrap/js/bootstrap.js"></script>
+		<script src="lib/bootstrap-validator/js/bootstrapValidator.js"></script>
+		<script src="lib/nprogress/nprogress.js"></script>
+		<script src="lib/echarts/echarts.min.js"></script>
+		<script src="js/common.js"></script>
+		<script src="js/index.js"></script>
 	</body>
 
 </html>
-<script type="text/javascript" src="lib/jquery/jquery.js"></script>
-<script type="text/javascript" src="lib/bootstrap/js/bootstrap.js"></script>
-<script type="text/javascript" src="lib/bootstrap-validator/js/bootstrapValidator.js"></script>
-<script type="text/javascript" src="../manage/lib/nprogress/nprogress.js"></script>
-<script type="text/javascript" src="lib/echarts/echarts.min.js"></script>
-<script type="text/javascript" src="js/common.js"></script>
-<script type="text/javascript" src="js/index.js"></script>
