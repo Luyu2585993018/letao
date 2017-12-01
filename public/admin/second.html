@@ -58,8 +58,8 @@
 				<button class="btn btn-default mb_20 btn_add">添加分类</button>
 
 				<!--分类表格-->
-				<table class="table table-bordered table-hover">
-					<thead>
+				<table class="table table-bordered table-hover text-center">
+					<thead class="text-center">
 						<tr>
 							<td width="10%">序号</td>
 							<td width="30%">一级分类名称</td>
@@ -73,7 +73,7 @@
 				</table>
 
 				<!--分页盒子-->
-				<div class="text-right">
+				<div class="text-center">
 					<ul id="paginator"></ul>
 				</div>
 			</div>
@@ -116,7 +116,7 @@
                 <span class="dropdown-text">请选择一级分类</span>
                 <span class="caret"></span>
               </button>
-									<input type="hidden" name="categoryId">
+									<input type="hidden" class="btnH" name="categoryId">
 									<ul class="dropdown-menu">
 										<!---->
 									</ul>
@@ -139,21 +139,29 @@
 						</div>
 						<div class="modal-footer">
 							<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-					
+
 							<button type="submit" form="form" class="btn btn-primary">添加</button></div>
 					</form>
-					</div>
 				</div>
 			</div>
+		</div>
 		<script type="text/html" id='tpl1'>
 			{{each rows v i}}
 			<tr>
 				<td>{{i+1+(page-1)*size}}</td>
 				<td>{{v.categoryName}}</td>
-				<td>{{}}</td>
-				<td>{{}}</td>
+				<td>{{v.brandName}}</td>
+				<td><img src="{{v. brandLogo?v. brandLogo:images/none.png}}" width="50" height="50" /></td>
 			</tr>
-
+			{{/each}}
+		</script>
+		<script type="text/html" id='tpl2'>
+			{{each rows v i}}
+			
+				<li>
+					<a data-id="{{v.id}}" href="javascript:;">{{v.categoryName}}</a>
+				</li>
+			
 			{{/each}}
 		</script>
 	</body>
@@ -162,7 +170,11 @@
 <script type="text/javascript" src="lib/jquery/jquery.js"></script>
 <script type="text/javascript" src="lib/bootstrap/js/bootstrap.js"></script>
 <script type="text/javascript" src="lib/bootstrap-validator/js/bootstrapValidator.js"></script>
-<script type="text/javascript" src="lib/bootstrap-paginator/bootstrap-paginator.js" ></script>
+<script type="text/javascript" src="lib/bootstrap-paginator/bootstrap-paginator.js"></script>
+<script type="text/javascript" src="lib/artTemplate/template-web.js"></script>
 <script type="text/javascript" src="lib/nprogress/nprogress.js"></script>
+<script type="text/javascript" src="lib/jquery-fileupload/jquery.ui.widget.js" ></script>
+<script type="text/javascript" src="lib/jquery-fileupload/jquery.iframe-transport.js" ></script>
+<script type="text/javascript" src="lib/jquery-fileupload/jquery.fileupload.js" ></script>
 <script type="text/javascript" src="js/common.js"></script>
 <script type="text/javascript" src="js/second.js"></script>
