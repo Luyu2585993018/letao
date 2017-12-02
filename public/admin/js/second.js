@@ -3,7 +3,7 @@
 var $form = $("form");
 $(function() {
 	var currentPage = 1;
-	var pageSizes = 4;
+	var pageSizes = 3;
 
 	function render() {
 		$.ajax({
@@ -43,7 +43,7 @@ $(function() {
 			url: "/category/queryTopCategoryPaging",
 			async: true,
 			data: {
-				page: currentPage,
+				page: 1,
 				pageSize: 100,
 			},
 			success: function(data) {
